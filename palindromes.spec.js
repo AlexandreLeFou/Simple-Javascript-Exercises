@@ -13,7 +13,7 @@ describe('palindromes', function() {
   it('works with multiple words', function() {
     expect(palindromes('Animal loots foliated detail of stool lamina.')).toEqual(true);
   });
-  xit('doesn\'t just always return true', function() {
+  it('doesn\'t just always return true', function() {
     expect(palindromes('ZZZZ car, a man, a maraca.')).toEqual(false);
   });
 
