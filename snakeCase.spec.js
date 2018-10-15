@@ -10,7 +10,7 @@ describe('snakeCase', function() {
   it('works with longer phrases', function() {
     expect(snakeCase('This is the song that never ends....')).toEqual('this_is_the_song_that_never_ends');
   });
-  xit('works with camel case', function() {
+  it('works with camel case', function() {
     expect(snakeCase('snakeCase')).toEqual('snake_case');
   });
   it('works with kebab case', function() {

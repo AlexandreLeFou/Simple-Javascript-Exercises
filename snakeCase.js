@@ -6,8 +6,12 @@ const snakeCase = function(x) {
    // console.log(word);
     console.log("=======================");
     for (var i = 0; i < word.length; i++) {
+        
+        
         word[i]= word[i].toLowerCase().replace(getout,""); //snake case convertion
         word[i]= word[i].replace(" ","_"); //snake case convertion
+        word[i]= word[i].replace("-","_"); //snake case convertion
+        
 
         //console.log(word[i]);
               
