@@ -1,4 +1,4 @@
-word='A'
+word='Aaa'
 inputshift= 1
 var i,j=0;
 var alphabetcapital=[];
@@ -8,7 +8,7 @@ alphabetsmall= ['a','b','c','d','e','f','g','h','i','j','k','l',
 word=word.split("");
 // var regex1 = RegExp(/[a-zA-z]|\b(undefined)/);
 //shift=inputshift;
-wordindex = word.length -1 ;// we start from 0 
+wordindex = word.length ;// we start from 0 
 for (i=0;i<=25;i++){
    alphabetcapital[i]= alphabetsmall[i].toUpperCase()}
 
@@ -17,25 +17,28 @@ for (i=0;i<=25;i++){
 do{
 for (i=0;i<=25;i++){
 
-   check=i+inputshift;
-   if (check>=0 && check<=25){shift=inputshift}
+   check=i+inputshift+1; 
+   if (check>=1 && check<=26){shift=inputshift}
    if (check<0){shift=Math.abs(inputshift)}
-   if (check>25) {shift=(check%25) }
+   if (check>26) {shift=(check%26)-1 }
     
 
-        if (word[wordindex]==alphabetsmall[i]){
-            newword[j]=alphabetsmall[shift]
-            j=j+1
-            break
+        if (word[wordindex]===alphabetsmall[i]){
+            console.log(word[i],"small",wordindex,i)
+            newword[j]=alphabetsmall[i+shift]
+            j=j+1}
+
             //console.log(j);
-        }else if (word[wordindex]==alphabetcapital[i]){
-            newword[i]=alphabetcapital[shift]
-            j=j+1
-            break
-        }else{ // (!regex1.test(word[i])){ //[^a-zA-z] not a-z,A-Z   or  undifined
+        if (word[wordindex]===alphabetcapital[i]){
+            console.log(word[i],"capital",wordindex,i)
+            newword[i]=alphabetcapital[i+shift]
+            j=j+1}
+           
+        if (88==24){ // (!regex1.test(word[i])){ //[^a-zA-z] not a-z,A-Z   or  undifined
+            console.log(word[i],"something else",wordindex,i)
             newword[wordindex]=word[i]
-            j=j+1
+            j=j+1}
             }
-                }
-    wordindex --
-    }while(wordindex>0)
+                
+    wordindex = wordindex-1;
+}while(wordindex>=0);

@@ -34,6 +34,7 @@ for (i=0;i<=25;i++){
         }else{ // (!regex1.test(word[i])){ //[^a-zA-z] not a-z,A-Z   or  undifined
             newword[wordindex]=word[i]
             j=j+1
+            break
             }
                 }
     wordindex --
