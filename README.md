@@ -6,11 +6,11 @@ I have creted some simple exercises regarding the following:
 
 -palindromes (A palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks)
 
--snakeCase 
+-snakeCase #yet to be made correct
 
--caesar
+-caesar #yet to be madecorrect
 
--fibonacci 
+-fibonacci #yet to be made
 
 -pigLatin# Simple-JS-exercises
 # Simple-JS-exercises
