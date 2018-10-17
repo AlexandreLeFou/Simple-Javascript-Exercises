@@ -1,6 +1,4 @@
 const caesar = function(word,inputshift) {
-    word='A'
-inputshift= 1
 var i,j=0;
 var alphabetcapital=[];
 var newword=[];
