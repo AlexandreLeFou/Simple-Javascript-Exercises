@@ -1,5 +1,4 @@
-const caesar = function(word,inputshift) {
-    word='A'
+word='A'
 inputshift= 1
 var i,j=0;
 var alphabetcapital=[];
@@ -40,18 +39,3 @@ for (i=0;i<=25;i++){
                 }
     wordindex --
     }while(wordindex>0)
-                    return(newword.join('').split('').reverse().join(''))
-
-                  // return(word[4])
-
-
-
-
-
-
-
-}
-
-
-
-module.exports = caesar
