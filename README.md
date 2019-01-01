@@ -2,13 +2,17 @@
 
 I have creted some simple exercises regarding the following:
 
--calculator (add, subtract, get the sum, multiply, get the power, and find the factorial)
+-Calculator:
+add, subtract, get the sum, multiply, get the power, and find the factorial
 
--palindromes (A palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks)
+-Palindromes:
+A palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks
 
--snakeCase #yet to be made correct
+-SnakeCase:
+practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, with each element's initial letter usually lowercased 
 
--caesar #yet to be madecorrect
+-Caesar Cipher:
+
 
 -fibonacci #yet to be made
 
