@@ -1,42 +1,40 @@
-word='Aaa'
-inputshift= 1
-var i,j=0;
-var alphabetcapital=[];
+word='Aaa BbC'
+inputshift= 26
+var i,check,j=0;
 var newword=[];
-alphabetsmall= ['a','b','c','d','e','f','g','h','i','j','k','l',
-            'm','n','o','p','q','r','s','t','u','v','w','x','y','z']
 word=word.split("");
-// var regex1 = RegExp(/[a-zA-z]|\b(undefined)/);
-//shift=inputshift;
+
 wordindex = word.length -1 ;// we start from 0 
-for (i=0;i<=25;i++){
-   alphabetcapital[i]= alphabetsmall[i].toUpperCase()}
 
 
+//a-z->97-122
+//A-z->65-90
 
-do{
-for (i=0;i<=25;i++){
+for (i=0;i<=wordindex;i++){
+    wordloop =word[i].charCodeAt()
 
-   check=i+inputshift+1; 
-   if (check>=1 && check<=26){shift=inputshift}
-   if (check<0){shift=Math.abs(inputshift)}
-   if (check>26) {shift=(check%26)-1 }
+    finalWordIndex =wordloop+inputshift //abs for negative values
+    if (finalWordIndex<0){finalWordIndex=Math.abs(finalWordIndex)} // if shift number is a negative
+
+    console.log("ok")
+
+    if (word[i].toUpperCase() == word[i]){    
+  // if (word[i].charCodeAt(0)>=65 && word[i].charCodeAt(0)<=122){newword[i] = charAt(word[i+check])} //if string is a-z or A-Z regarding dec value
+        if (finalWordIndex>90){ finalWordIndex=finalWordIndex%65+65} //if shift number is bigger than A->z numbers       
+
+
+        
+        newword[i] = String.fromCharCode(finalWordIndex);
     
+    }else if ((word[i].toLowerCase() == word[i])){
+            if (finalWordIndex>122){ finalWordIndex=finalWordIndex%97+97} //if shift number is bigger than A->z numbers       
 
-        if (word[wordindex]===alphabetsmall[i]){
-            console.log("Letter:",word[i],"small",wordindex,i)
-            newword[j]=alphabetsmall[i+shift]
-            j=j+1}
-        if (word[wordindex]===alphabetcapital[i]){
-            console.log("Letter:",word[i],"capital",wordindex,i)
-            newword[i]=alphabetcapital[i+shift]
-            j=j+1}
-           
-        if (88==24){ // (!regex1.test(word[i])){ //[^a-zA-z] not a-z,A-Z   or  undifined
-            console.log("Letter:",word[i],"something else",wordindex,i)
-            newword[wordindex]=word[i]
-            j=j+1}
-            }
-                
-    wordindex = wordindex-1;
-}while(wordindex>=0);
+            newword[i] = String.fromCharCode(finalWordIndex);
+
+
+   }else {newword[i] = word[i]} //if it's a punctuation etc leave it as it is
+
+   console.log("Loop:"+i+", number:"+finalWordIndex)
+    
+}    
+    console.log("Old Word,New Word:"+word.join("")+"<-- and the new-->"+newword.join(""))
