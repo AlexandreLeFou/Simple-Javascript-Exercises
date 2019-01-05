@@ -1,55 +1,39 @@
-const caesar = function(word,inputshift) {
+const caesar = function(string, shift) {
 var i,j=0;
-var alphabetcapital=[];
 var newword=[];
-alphabetsmall= ['a','b','c','d','e','f','g','h','i','j','k','l',
-                'm','n','o','p','q','r','s','t','u','v','w','x',
-                'y','z']
-word=word.split("");
-// var regex1 = RegExp(/[a-zA-z]|\b(undefined)/);
-//shift=inputshift;
+word=string.split("");
+var characterAscii= new RegExp("[a-zA-Z]");
+
 wordindex = word.length -1 ;// we start from 0 
-for (i=0;i<=25;i++){
-   alphabetcapital[i]= alphabetsmall[i].toUpperCase()}
 
 
+//a-z->97-122
+//A-z->65-90
 
-do{
- for (i=0;i<=25;i++){ //0-->25=66 letters in the alphabet
+for (i=0;i<=wordindex;i++){
+    wordloop =word[i].charCodeAt();
 
-   check=i+inputshift;
-   
-  if (check>=0 && check<=25){shift=inputshift} //user input is whithin boundaries
-  if(check<0){shift=Math.abs(inputshift)} //user input results to negative values...
-  if (check>25) {shift=(check%25) }
+    finalWordIndex =wordloop+shift //abs for negative values
+    if (finalWordIndex<0){finalWordIndex=Math.abs(finalWordIndex)} // if shift number is a negative
+   // console.log("ok loop"+i)
+ if (word[i]==characterAscii){
+    if (word[i].toUpperCase() == word[i]){    
+      if (finalWordIndex>90){ finalWordIndex=finalWordIndex%65+65} //if shift number is bigger than A->z numbers       
+       
+        newword[i] = String.fromCharCode(finalWordIndex);
     
+      }else{
+      //else if ((word[i].toLowerCase() == word[i])){
+            if (finalWordIndex>122){ finalWordIndex=finalWordIndex%97+97} //if shift number is bigger than A->z numbers       
 
-        if (word[wordindex]==alphabetsmall[i]){
-            newword[j]=alphabetsmall[shift]
-            j=j+1
-            //break
-            //console.log(j);
-        }else if (word[wordindex]==alphabetcapital[i]){
-            newword[i]=alphabetcapital[shift]
-            j=j+1
-           // break
-        }else{ // (!regex1.test(word[i])){ //[^a-zA-z] not a-z,A-Z   or  undifined
-            newword[wordindex]=word[i]
-            j=j+1
-           // break
-            }
-                }
-    wordindex --
-}while(wordindex>0)
-                    return(newword.join('').split('').reverse().join(''))
+            newword[i] = String.fromCharCode(finalWordIndex);
+          }
+   }else {newword[i] = word[i]} //if it's a punctuation etc leave it as it is
 
-                  // return(word[4])
-
-
-
-
-
-
+  // console.log("Loop:"+i+", number:"+finalWordIndex)
+    
+}    
+   // console.log("Old Word,New Word:"+word.join("")+"<-- and the new-->"+newword.join(""))
 
 }
 
