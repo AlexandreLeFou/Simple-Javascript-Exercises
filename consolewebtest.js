@@ -1,8 +1,9 @@
-word='Aaa BbC'
-inputshift= 26
+word='Aaa!BbC'
+inputshift= 1
 var i,check,j=0;
 var newword=[];
 word=word.split("");
+var notChar= new RegExp("[^a-zA-Z]");
 
 wordindex = word.length -1 ;// we start from 0 
 
@@ -18,7 +19,7 @@ for (i=0;i<=wordindex;i++){
 
     console.log("ok")
 
-    if (word[i].toUpperCase() == word[i]){    
+    if (word[i].toUpperCase() == word[i] && word[i]!=notChar){    
   // if (word[i].charCodeAt(0)>=65 && word[i].charCodeAt(0)<=122){newword[i] = charAt(word[i+check])} //if string is a-z or A-Z regarding dec value
         if (finalWordIndex>90){ finalWordIndex=finalWordIndex%65+65} //if shift number is bigger than A->z numbers       
 
@@ -26,7 +27,7 @@ for (i=0;i<=wordindex;i++){
         
         newword[i] = String.fromCharCode(finalWordIndex);
     
-    }else if ((word[i].toLowerCase() == word[i])){
+    }else if ((word[i].toLowerCase() == word[i])&& word[i]!=notChar){
             if (finalWordIndex>122){ finalWordIndex=finalWordIndex%97+97} //if shift number is bigger than A->z numbers       
 
             newword[i] = String.fromCharCode(finalWordIndex);
