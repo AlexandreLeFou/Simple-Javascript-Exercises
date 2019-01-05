@@ -1,9 +1,9 @@
-word='Aaa!BbC'
+word='Aaa,!B  bC'
 inputshift= 1
 var i,check,j=0;
 var newword=[];
 word=word.split("");
-var notChar= new RegExp("[^a-zA-Z]");
+var characterAscii= new RegExp("[a-zA-Z]");
 
 wordindex = word.length -1 ;// we start from 0 
 
@@ -18,21 +18,18 @@ for (i=0;i<=wordindex;i++){
     if (finalWordIndex<0){finalWordIndex=Math.abs(finalWordIndex)} // if shift number is a negative
 
     console.log("ok")
-
-    if (word[i].toUpperCase() == word[i] && word[i]!=notChar){    
-  // if (word[i].charCodeAt(0)>=65 && word[i].charCodeAt(0)<=122){newword[i] = charAt(word[i+check])} //if string is a-z or A-Z regarding dec value
-        if (finalWordIndex>90){ finalWordIndex=finalWordIndex%65+65} //if shift number is bigger than A->z numbers       
-
-
-        
+ if (word[i]==characterAscii){
+    if (word[i].toUpperCase() == word[i]){    
+      if (finalWordIndex>90){ finalWordIndex=finalWordIndex%65+65} //if shift number is bigger than A->z numbers       
+       
         newword[i] = String.fromCharCode(finalWordIndex);
     
-    }else if ((word[i].toLowerCase() == word[i])&& word[i]!=notChar){
+      }else{
+      //else if ((word[i].toLowerCase() == word[i])){
             if (finalWordIndex>122){ finalWordIndex=finalWordIndex%97+97} //if shift number is bigger than A->z numbers       
 
             newword[i] = String.fromCharCode(finalWordIndex);
-
-
+          }
    }else {newword[i] = word[i]} //if it's a punctuation etc leave it as it is
 
    console.log("Loop:"+i+", number:"+finalWordIndex)
