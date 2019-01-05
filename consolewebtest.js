@@ -1,6 +1,6 @@
 word='aaa,jAAA'
-inputshift= 655
-var i,j=0;
+inputshift= 13
+var i,j=0,finalWordIndex=0;
 var newword=[];
 word=word.split("");
 var characterAscii= new RegExp("[a-zA-Z]");
@@ -12,9 +12,8 @@ var wordindex = word.length -1 ;// we start from 0
 //A-z->65-90
 
 for (i=0;i<=wordindex;i++){
-    wordloop =word[i].charCodeAt();
+  finalWordIndex =word[i].charCodeAt();
 
-    finalWordIndex =wordloop+inputshift //abs for negative values
   console.log("---> word loop:"+i)
 
  if (characterAscii.test(word[i])){
