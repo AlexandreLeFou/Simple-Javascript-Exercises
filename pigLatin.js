@@ -8,8 +8,8 @@ function translate(testSentece) {
 
 //eng vowels A, E, I, O, U, and sometimes Y can be considered a vowel.
 var newSentence  = testSentece.split('');
-var vowels = {A, E, I, O, U, Y}
-var consonant = {B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Z}
+var vowels = ['A', 'E', 'I', 'O', 'U', 'Y']
+var consonant = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
 
 
 for (i=0;i<=vowels.length;i++){ //Rule 1
