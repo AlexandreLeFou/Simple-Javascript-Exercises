@@ -1,6 +1,6 @@
 # Simple-JS-exercies
 
-I have developeda some simple algorithmic exercises regarding the following:
+I have developed a some simple algorithmic exercises regarding the following:
 
 ### Calculator:
 
